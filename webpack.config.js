@@ -1,44 +1,44 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: "./src/index.tsx",
-  target: "web",
-  mode: "development",
+  entry: './src/index.tsx',
+  target: 'web',
+  mode: 'development',
   devServer: {
-      port: 3001,
+    port: 3001,
   },
   output: {
-    path: path.resolve("build"),
-    filename: "bundle.js",
+    path: path.resolve('build'),
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        loader: "awesome-typescript-loader",
+        loader: 'awesome-typescript-loader',
       },
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.js$/,
-        loader: "source-map-loader",
+        loader: 'source-map-loader',
       },
       {
         test: /\.css$/,
-        loader: "css-loader",
+        loader: 'css-loader',
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve("public", "index.html"),
+      template: path.resolve('public', 'index.html'),
     }),
     new MiniCssExtractPlugin({
-      filename: "./src/styles.css",
+      filename: './src/styles.css',
     }),
   ],
 };

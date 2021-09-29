@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "start": "webpack-dev-server --open",
-    "build": "webpack"
+    "build": "webpack",
+    "prettier": "prettier --check .",
+    "prettier-fix": "prettier --write ."
   },
   "author": "mgarzon-celerik",
   "license": "ISC",
@@ -23,6 +27,7 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^6.3.0",
     "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.0",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.3.0",
@@ -39,6 +44,8 @@
     "webpack-server": "^0.1.2"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.4.1",
     "webpack-cli": "^4.8.0"
   }
 }

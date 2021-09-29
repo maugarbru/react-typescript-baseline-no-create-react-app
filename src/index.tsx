@@ -1,8 +1,8 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { App } from "./App";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { App } from './App';
 
 ReactDOM.render(
   <App userName="Celerik" lang="TypeScript" />,
-  document.getElementById("output")
+  document.getElementById('output')
 );
