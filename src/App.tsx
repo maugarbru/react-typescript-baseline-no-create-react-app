@@ -5,8 +5,8 @@ export interface HelloWorldProps {
   lang: string;
 }
 
-export const App = (props: HelloWorldProps) => (
+export const App = ({ userName, lang }: HelloWorldProps): JSX.Element => (
   <h1>
-    Hi {props.userName} from React! Welcome to {props.lang}!
+    Hi {userName}! Welcome to React + {lang}!
   </h1>
 );
