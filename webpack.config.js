@@ -19,8 +19,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
-        loader: 'awesome-typescript-loader',
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         enforce: 'pre',
@@ -29,7 +30,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
     ],
   },
@@ -38,7 +39,8 @@ module.exports = {
       template: path.resolve('public', 'index.html'),
     }),
     new MiniCssExtractPlugin({
-      filename: './src/styles.css',
+      filename: 'styles.css',
+      chunkFilename: 'styles.css',
     }),
   ],
 };
